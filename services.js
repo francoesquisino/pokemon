@@ -5,22 +5,24 @@ export function showPokemons() {
 }
 
 function viewListPokemon(pokemon) {
-  let boards = document.getElementById("div2");
+  let boards = document.getElementById("list-tab");
   boards.innerHTML = "";
   pokemon.results.forEach((poke) => {
-    let div = document.createElement("div");
-    div.innerHTML = `<div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">${poke.name}</h5>
-      <button onclick="${fetchPokemon}">Click me</button> 
-    </div>
-  </div> `;
-    boards.appendChild(div);
+    const $link = document.createElement("a");
+    $link.classList = "list-group-item list-group-item-action";
+    $link.dataset.toggle = "list";
+    $link.setAttribute("href", poke.url);
+    $link.textContent = poke.name;
+    $link.onclick = fetchPokemon;
+    boards.appendChild($link);
   });
 }
 
-function fetchPokemon(event) {
-  alert("hola");
+function fetchPokemon(e) {
+  listPokemon(e.target.href);
+  return false;
 }
 
-function listPokemon() {}
+function listPokemon(e) {
+  alert(e);
+}
