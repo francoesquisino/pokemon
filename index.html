@@ -16,17 +16,41 @@
       crossorigin="anonymous"
     ></script>
     <script defer type="module" src="main.js"></script>
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
 
   <body>
     <div class="container-fluid">
+      <div class="row title">
+        <div class="col-md-6"><h1>POKEMON</h1></div>
+        <div class="col-md-6"></div>
+      </div>
       <div class="row">
-        <div class="col-md-4"></div>
-        <div class="list-group mb-2" id="list-tab" role="tablist">
-          <!---->
+        <div class="col-md-3 div1">
+          <div class="list-group mb-2" id="list-tab" role="tablist">
+            <!---->
+          </div>
         </div>
-        <div class="col-md-4"></div>
+
+        <div id="pokemonCard" class="col-md-3">
+          <div class="card border border-primary p-4" style="width: 18rem">
+            <h5 id="namePokemon" class="card-title text-primary">
+              Seleccion su Pokemon
+            </h5>
+            <img
+              id="imagePokemon"
+              class="card-img-top"
+              src="/imagenes/huevopokemon.png"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <div id="abilityPokemon"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
       </div>
     </div>
   </body>
